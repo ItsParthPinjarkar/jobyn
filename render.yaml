@@ -1,70 +1,17 @@
-# ─── Render Blueprint — Jobyn ───────────────────
-# Deploy both frontend (static site) and backend (web service)
-# from a single repo.
-#
-# Usage: Push to GitHub → Render Dashboard → New Blueprint → connect repo
-# Render auto-detects this file and creates both services.
-
+# Render Blueprint — Jobyn
 services:
-  # ── Backend: FastAPI + ML ──────────────────────────────────
   - type: web
     name: jobyn-api
     runtime: python
     region: oregon
     plan: free
     rootDir: backend
-    # We do NOT train on deploy: the training data lives only in Supabase and
-    # the RandomForest pickles (~200 MB) OOM on small instances. Instead we pull
-    # prebuilt ONNX artefacts from a GitHub Release (see app/scripts/fetch_models.py).
-    # To retrain: run train_v2 + convert_to_onnx locally, then re-upload the
-    # artefacts to the `models-v2` release (gh release upload models-v2 ... --clobber).
-    buildCommand: pip install -r requirements.txt && python -m app.scripts.fetch_models
+    buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
-        value: "3.12.8"        # match backend/Dockerfile (python:3.12-slim) and docs
-      - key: SUPABASE_URL
-        sync: false          # set manually in Render dashboard
-      - key: SUPABASE_KEY
-        sync: false
-      - key: SUPABASE_JWT_SECRET
-        sync: false
-      - key: BYTEZ_API_KEY
-        sync: false
-      - key: GITHUB_TOKEN
-        sync: false          # GitHub PAT for project verification
+        value: "3.12.8"
       - key: GEMINI_API_KEY
         sync: false
-      - key: CORS_ORIGINS
-        sync: false          # set to your frontend URL, e.g. https://getjobyn.pages.dev
-      - key: REDIS_URL
-        sync: false          # set to your Upstash Redis URL (rediss://...)
-      - key: RESUME_ENCRYPTION_KEY
-        sync: false          # set to your Fernet key
-      - key: SENTRY_DSN
-        sync: false          # optional — Sentry error tracking
-
-  # ── Frontend: Vite Static Site ─────────────────────────────
-  - type: web
-    name: jobyn
-    runtime: static
-    rootDir: frontend
-    # The committed package-lock.json is generated on Windows and only locks the
-    # win32 rollup binary; the Linux binary (@rollup/rollup-linux-x64-gnu) is
-    # missing, so a plain `npm install` (which honors the lock) fails on Render's
-    # Linux builders with npm bug #4828. Remove the stale lockfile and any cached
-    # node_modules so npm resolves the correct platform binaries. Mirrors ci.yml.
-    # Long-term fix: regenerate the lockfile on Linux, commit it, restore npm ci.
-    buildCommand: rm -rf node_modules package-lock.json && npm install && npm run build
-    staticPublishPath: dist
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
-    envVars:
-      - key: VITE_API_URL
-        sync: false          # set to backend URL, e.g. https://jobyn-api.onrender.com
-      - key: VITE_SUPABASE_URL
-        sync: false
-      - key: VITE_SUPABASE_ANON_KEY
+      - key: BYTEZ_API_KEY
         sync: false
