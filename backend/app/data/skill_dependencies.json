@@ -1,0 +1,205 @@
+{
+    "python": [],
+    "java": [],
+    "javascript": [
+        "html",
+        "css"
+    ],
+    "typescript": [
+        "javascript"
+    ],
+    "c": [],
+    "c++": [
+        "c"
+    ],
+    "go": [],
+    "rust": [
+        "c"
+    ],
+    "kotlin": [
+        "java"
+    ],
+    "html": [],
+    "css": [
+        "html"
+    ],
+    "react": [
+        "javascript",
+        "html",
+        "css"
+    ],
+    "vue": [
+        "javascript",
+        "html",
+        "css"
+    ],
+    "angular": [
+        "typescript",
+        "html",
+        "css"
+    ],
+    "next.js": [
+        "react",
+        "javascript"
+    ],
+    "tailwind": [
+        "css",
+        "html"
+    ],
+    "flask": [
+        "python"
+    ],
+    "fastapi": [
+        "python",
+        "api"
+    ],
+    "django": [
+        "python",
+        "sql"
+    ],
+    "node.js": [
+        "javascript"
+    ],
+    "express": [
+        "node.js",
+        "javascript"
+    ],
+    "spring": [
+        "java"
+    ],
+    "sql": [],
+    "mysql": [
+        "sql"
+    ],
+    "postgresql": [
+        "sql"
+    ],
+    "mongodb": [],
+    "redis": [],
+    "firebase": [],
+    "api": [],
+    "rest": [
+        "api"
+    ],
+    "graphql": [
+        "api",
+        "javascript"
+    ],
+    "grpc": [
+        "api"
+    ],
+    "git": [],
+    "linux": [],
+    "bash": [
+        "linux"
+    ],
+    "docker": [
+        "linux",
+        "bash"
+    ],
+    "kubernetes": [
+        "docker",
+        "linux"
+    ],
+    "terraform": [
+        "linux",
+        "cloud"
+    ],
+    "ci/cd": [
+        "git",
+        "docker"
+    ],
+    "github actions": [
+        "git",
+        "ci/cd"
+    ],
+    "jenkins": [
+        "ci/cd"
+    ],
+    "aws": [
+        "linux",
+        "cloud"
+    ],
+    "gcp": [
+        "linux",
+        "cloud"
+    ],
+    "azure": [
+        "linux",
+        "cloud"
+    ],
+    "cloud": [
+        "linux"
+    ],
+    "numpy": [
+        "python"
+    ],
+    "pandas": [
+        "python",
+        "numpy"
+    ],
+    "scikit-learn": [
+        "python",
+        "numpy",
+        "statistics"
+    ],
+    "tensorflow": [
+        "python",
+        "numpy",
+        "deep learning"
+    ],
+    "pytorch": [
+        "python",
+        "numpy",
+        "deep learning"
+    ],
+    "machine learning": [
+        "python",
+        "statistics",
+        "linear algebra"
+    ],
+    "deep learning": [
+        "machine learning",
+        "numpy"
+    ],
+    "computer vision": [
+        "deep learning",
+        "numpy"
+    ],
+    "nlp": [
+        "deep learning",
+        "python"
+    ],
+    "mlops": [
+        "machine learning",
+        "docker",
+        "ci/cd"
+    ],
+    "system design": [
+        "api",
+        "sql",
+        "cloud"
+    ],
+    "microservices": [
+        "docker",
+        "api",
+        "rest"
+    ],
+    "dsa": [],
+    "algorithms": [
+        "dsa"
+    ],
+    "data structures": [
+        "dsa"
+    ],
+    "statistics": [],
+    "linear algebra": [],
+    "probability": [
+        "statistics"
+    ],
+    "testing": [],
+    "debugging": [],
+    "agile": [],
+    "figma": [],
+    "matlab": []
+}

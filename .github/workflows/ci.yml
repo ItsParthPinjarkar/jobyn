@@ -1,0 +1,96 @@
+name: Jobyn CI
+
+on:
+  push:
+    branches: [main-backup, main, develop]
+  pull_request:
+    branches: [main-backup, main]
+
+env:
+  NODE_VERSION: "20"
+  PYTHON_VERSION: "3.12"
+
+jobs:
+  # ─── Frontend ─────────────────────────────────────────────────────────
+  frontend:
+    name: Frontend (Lint → Test → Build)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: frontend/package.json
+
+      - name: Install dependencies
+        # The committed package-lock.json is generated on Windows and only
+        # records win32 rollup binaries — the linux optional dep
+        # (@rollup/rollup-linux-x64-gnu) is missing, so both `npm ci` and a
+        # plain `npm install` (which still honors the lock) fail to install it
+        # on the Linux runner (npm/cli#4828). Removing the stale lock forces npm
+        # to resolve fresh from package.json and fetch the correct platform
+        # binary — exactly what the rollup error message recommends.
+        # Long-term fix: regenerate the lockfile on Linux (WSL/Docker), commit
+        # it, and restore `npm ci`.
+        run: |
+          rm -f package-lock.json
+          npm install
+
+      - name: TypeScript check
+        run: npx tsc --noEmit
+
+      - name: Unit tests
+        run: npx vitest run
+
+      - name: Build
+        run: npm run build
+
+  # ─── Backend ──────────────────────────────────────────────────────────
+  backend:
+    name: Backend (Lint → Test)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Lint with ruff
+        run: |
+          pip install ruff
+          ruff check app/ --select E,F,W --ignore E501
+
+      - name: Unit tests
+        run: python -m pytest tests/ -v --tb=short
+
+  # ─── Deploy (only on main push) ──────────────────────────────────────
+  deploy:
+    name: Deploy
+    needs: [frontend, backend]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy placeholder
+        run: |
+          echo "✅ All checks passed — ready for deployment."
+          echo "Configure your deployment target here (Vercel, Railway, etc.)"

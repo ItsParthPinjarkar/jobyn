@@ -1,0 +1,48 @@
+{
+    "weights": {
+        "core": 0.6,
+        "optional": 0.15,
+        "project": 0.15,
+        "ats": 0.05,
+        "structure": 0.05
+    },
+    "readiness_thresholds": {
+        "job_ready": 75,
+        "improving": 50
+    },
+    "skill_importance": {
+        "high": {
+            "weight": 1.5,
+            "skills": [
+                "dsa",
+                "system design",
+                "sql",
+                "git",
+                "python",
+                "javascript",
+                "api"
+            ]
+        },
+        "medium": {
+            "weight": 1.0,
+            "skills": [
+                "docker",
+                "aws",
+                "react",
+                "testing",
+                "ci/cd",
+                "linux",
+                "typescript"
+            ]
+        },
+        "low": {
+            "weight": 0.7,
+            "skills": [
+                "figma",
+                "tableau",
+                "finops",
+                "aiops"
+            ]
+        }
+    }
+}

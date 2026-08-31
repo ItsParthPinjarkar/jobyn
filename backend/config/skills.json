@@ -1,0 +1,817 @@
+{
+  "active directory": [
+    "active directory",
+    "ad",
+    "ldap"
+  ],
+  "adobe": [
+    "adobe",
+    "adobe creative cloud",
+    "adobe creative suite"
+  ],
+  "agile": [
+    "agile",
+    "scrum",
+    "kanban",
+    "sprint"
+  ],
+  "aiops": [
+    "aiops",
+    "ai ops"
+  ],
+  "angular": [
+    "angular",
+    "angularjs",
+    "angular.js"
+  ],
+  "ansible": [
+    "ansible",
+    "ansible playbook"
+  ],
+  "apache": [
+    "apache",
+    "httpd"
+  ],
+  "api": [
+    "api",
+    "web api",
+    "api development"
+  ],
+  "aws": [
+    "aws",
+    "amazon web services",
+    "ec2",
+    "s3",
+    "lambda",
+    "sagemaker"
+  ],
+  "azure": [
+    "azure",
+    "microsoft azure",
+    "azure devops"
+  ],
+  "bash": [
+    "bash",
+    "shell scripting",
+    "shell script",
+    "zsh",
+    "powershell"
+  ],
+  "big data": [
+    "big data",
+    "hadoop",
+    "hive",
+    "spark",
+    "mapreduce"
+  ],
+  "blockchain": [
+    "blockchain",
+    "web3",
+    "smart contracts",
+    "solidity",
+    "ethereum"
+  ],
+  "bootstrap": [
+    "bootstrap"
+  ],
+  "c": [
+    "c language",
+    "c programming",
+    "ansi c"
+  ],
+  "c#": [
+    "c#",
+    "csharp",
+    "c sharp",
+    ".net",
+    "dotnet"
+  ],
+  "c++": [
+    "c++",
+    "cpp",
+    "c plus plus"
+  ],
+  "canva": [
+    "canva"
+  ],
+  "cassandra": [
+    "cassandra",
+    "apache cassandra"
+  ],
+  "cdn": [
+    "cdn",
+    "content delivery network"
+  ],
+  "ci/cd": [
+    "ci/cd",
+    "cicd",
+    "continuous integration",
+    "continuous deployment",
+    "continuous delivery"
+  ],
+  "cisco": [
+    "cisco",
+    "ccna",
+    "ccnp",
+    "ccie"
+  ],
+  "cloud computing": [
+    "cloud computing",
+    "cloud-native",
+    "cloud native",
+    "serverless"
+  ],
+  "computer vision": [
+    "computer vision",
+    "image recognition",
+    "object detection",
+    "yolo"
+  ],
+  "confluence": [
+    "confluence"
+  ],
+  "css": [
+    "css",
+    "css3",
+    "sass",
+    "scss",
+    "less",
+    "stylus"
+  ],
+  "cybersecurity": [
+    "cybersecurity",
+    "secure coding",
+    "api security",
+    "security",
+    "owasp",
+    "penetration testing",
+    "ethical hacking"
+  ],
+  "dart": [
+    "dart",
+    "flutter"
+  ],
+  "data analysis": [
+    "data analysis",
+    "data analytics",
+    "business intelligence",
+    "bi"
+  ],
+  "data engineering": [
+    "data engineering",
+    "etl",
+    "data pipeline",
+    "airflow",
+    "apache airflow"
+  ],
+  "datadog": [
+    "datadog"
+  ],
+  "deep learning": [
+    "deep learning",
+    "dl",
+    "neural networks",
+    "neural network",
+    "cnn",
+    "rnn",
+    "lstm"
+  ],
+  "django": [
+    "django",
+    "drf",
+    "django rest framework"
+  ],
+  "docker": [
+    "docker",
+    "dockerfile",
+    "docker compose",
+    "containerization"
+  ],
+  "dsa": [
+    "data structures",
+    "algorithms",
+    "dsa",
+    "data structures and algorithms",
+    "competitive programming",
+    "leetcode"
+  ],
+  "dynamics": [
+    "dynamics",
+    "dynamics 365",
+    "d365"
+  ],
+  "dynamodb": [
+    "dynamodb",
+    "dynamo db"
+  ],
+  "elasticsearch": [
+    "elasticsearch",
+    "elastic search",
+    "elk stack",
+    "kibana"
+  ],
+  "excel": [
+    "excel",
+    "microsoft excel",
+    "spreadsheet"
+  ],
+  "exchange": [
+    "exchange",
+    "ms exchange",
+    "exchange server"
+  ],
+  "express": [
+    "express",
+    "expressjs",
+    "express.js"
+  ],
+  "fastapi": [
+    "fastapi",
+    "fast api"
+  ],
+  "figma": [
+    "figma"
+  ],
+  "finops": [
+    "finops",
+    "cost optimization"
+  ],
+  "firebase": [
+    "firebase",
+    "firestore"
+  ],
+  "flask": [
+    "flask"
+  ],
+  "gcp": [
+    "gcp",
+    "google cloud",
+    "google cloud platform",
+    "bigquery"
+  ],
+  "gdpr": [
+    "gdpr"
+  ],
+  "generative ai": [
+    "generative ai",
+    "genai",
+    "gen ai",
+    "generative artificial intelligence"
+  ],
+  "git": [
+    "git",
+    "github",
+    "gitlab",
+    "bitbucket",
+    "version control"
+  ],
+  "gitops": [
+    "gitops",
+    "argocd",
+    "argo cd",
+    "flux"
+  ],
+  "golang": [
+    "golang",
+    "go lang",
+    "go programming"
+  ],
+  "gradle": [
+    "gradle"
+  ],
+  "grafana": [
+    "grafana"
+  ],
+  "graphql": [
+    "graphql",
+    "graph ql"
+  ],
+  "grpc": [
+    "grpc",
+    "g rpc",
+    "protocol buffers",
+    "protobuf"
+  ],
+  "hipaa": [
+    "hipaa"
+  ],
+  "html": [
+    "html",
+    "html5",
+    "html 5"
+  ],
+  "hubspot": [
+    "hubspot"
+  ],
+  "iis": [
+    "iis",
+    "internet information services"
+  ],
+  "illustrator": [
+    "illustrator",
+    "adobe illustrator"
+  ],
+  "iso": [
+    "iso",
+    "iso 27001",
+    "iso 9001"
+  ],
+  "itil": [
+    "itil"
+  ],
+  "java": [
+    "java",
+    "jdk",
+    "jvm",
+    "j2ee",
+    "openjdk"
+  ],
+  "javascript": [
+    "javascript",
+    "js",
+    "ecmascript",
+    "es6",
+    "es2015",
+    "vanilla js"
+  ],
+  "jenkins": [
+    "jenkins",
+    "jenkins pipeline"
+  ],
+  "jira": [
+    "jira",
+    "atlassian"
+  ],
+  "jwt": [
+    "jwt",
+    "json web token"
+  ],
+  "kafka": [
+    "kafka",
+    "apache kafka"
+  ],
+  "kotlin": [
+    "kotlin",
+    "kt"
+  ],
+  "kubernetes": [
+    "kubernetes",
+    "k8s",
+    "kube",
+    "helm",
+    "helm charts"
+  ],
+  "langchain": [
+    "langchain",
+    "lang chain",
+    "llamaindex",
+    "llama index"
+  ],
+  "ldap": [
+    "ldap"
+  ],
+  "linux": [
+    "linux",
+    "unix",
+    "ubuntu",
+    "centos",
+    "debian",
+    "fedora"
+  ],
+  "llm": [
+    "llm",
+    "large language models",
+    "fine-tuning",
+    "fine tuning",
+    "chatgpt",
+    "openai"
+  ],
+  "load balancing": [
+    "load balancing",
+    "load balancer",
+    "haproxy"
+  ],
+  "machine learning": [
+    "machine learning",
+    "ml",
+    "supervised learning",
+    "unsupervised learning"
+  ],
+  "macos": [
+    "macos",
+    "mac os",
+    "osx",
+    "os x"
+  ],
+  "matlab": [
+    "matlab"
+  ],
+  "maven": [
+    "maven"
+  ],
+  "microservices": [
+    "microservices",
+    "micro services",
+    "service mesh",
+    "istio"
+  ],
+  "mlops": [
+    "mlops",
+    "ml ops",
+    "model monitoring",
+    "model deployment",
+    "mlflow",
+    "kubeflow"
+  ],
+  "mongodb": [
+    "mongodb",
+    "mongo",
+    "mongoose"
+  ],
+  "nestjs": [
+    "nestjs",
+    "nest.js",
+    "nest js"
+  ],
+  "networking": [
+    "networking",
+    "tcp/ip",
+    "dns",
+    "dhcp",
+    "vpn",
+    "firewall",
+    "router",
+    "switch",
+    "vlan"
+  ],
+  "new relic": [
+    "new relic",
+    "newrelic"
+  ],
+  "next.js": [
+    "next.js",
+    "nextjs",
+    "next js"
+  ],
+  "nginx": [
+    "nginx",
+    "reverse proxy",
+    "load balancer"
+  ],
+  "nlp": [
+    "nlp",
+    "natural language processing",
+    "text mining",
+    "spacy",
+    "nltk"
+  ],
+  "node.js": [
+    "node.js",
+    "nodejs",
+    "node js",
+    "node"
+  ],
+  "npm": [
+    "npm",
+    "yarn",
+    "pnpm"
+  ],
+  "numpy": [
+    "numpy",
+    "np"
+  ],
+  "oauth": [
+    "oauth",
+    "oauth2"
+  ],
+  "office 365": [
+    "office 365",
+    "o365",
+    "microsoft 365",
+    "m365"
+  ],
+  "onnx": [
+    "onnx",
+    "onnxruntime"
+  ],
+  "oops": [
+    "object oriented",
+    "oops",
+    "oop",
+    "object-oriented programming",
+    "polymorphism",
+    "inheritance"
+  ],
+  "opencv": [
+    "opencv",
+    "cv2",
+    "open cv"
+  ],
+  "oracle": [
+    "oracle",
+    "oracle db",
+    "pl/sql"
+  ],
+  "pandas": [
+    "pandas"
+  ],
+  "pci": [
+    "pci",
+    "pci dss"
+  ],
+  "photoshop": [
+    "photoshop",
+    "adobe photoshop"
+  ],
+  "php": [
+    "php",
+    "laravel",
+    "symfony"
+  ],
+  "postgresql": [
+    "postgresql",
+    "postgres",
+    "pg"
+  ],
+  "postman": [
+    "postman"
+  ],
+  "power bi": [
+    "power bi",
+    "powerbi",
+    "microsoft power bi"
+  ],
+  "powershell": [
+    "powershell",
+    "power shell"
+  ],
+  "prometheus": [
+    "prometheus",
+    "grafana",
+    "monitoring"
+  ],
+  "prompt engineering": [
+    "prompt engineering",
+    "prompt design"
+  ],
+  "python": [
+    "python",
+    "py",
+    "python3",
+    "cpython",
+    "python2"
+  ],
+  "pytorch": [
+    "pytorch",
+    "torch",
+    "py torch"
+  ],
+  "r": [
+    "r programming",
+    "r language",
+    "rstudio",
+    "r studio"
+  ],
+  "rabbitmq": [
+    "rabbitmq",
+    "rabbit mq"
+  ],
+  "rag": [
+    "rag",
+    "retrieval augmented generation",
+    "retrieval-augmented generation"
+  ],
+  "react": [
+    "react",
+    "reactjs",
+    "react.js",
+    "react js",
+    "react native"
+  ],
+  "redis": [
+    "redis",
+    "memcached"
+  ],
+  "redux": [
+    "redux",
+    "redux toolkit",
+    "rtk"
+  ],
+  "rest": [
+    "rest",
+    "rest api",
+    "restful",
+    "restful api"
+  ],
+  "ruby": [
+    "ruby",
+    "rails",
+    "ruby on rails"
+  ],
+  "rust": [
+    "rust",
+    "rust-lang",
+    "rustlang"
+  ],
+  "salesforce": [
+    "salesforce",
+    "sfdc"
+  ],
+  "saml": [
+    "saml"
+  ],
+  "sap": [
+    "sap",
+    "sap erp"
+  ],
+  "sas": [
+    "sas",
+    "statistical analysis system"
+  ],
+  "scala": [
+    "scala"
+  ],
+  "scikit-learn": [
+    "scikit-learn",
+    "sklearn",
+    "scikit learn"
+  ],
+  "selenium": [
+    "selenium"
+  ],
+  "servicenow": [
+    "servicenow"
+  ],
+  "sharepoint": [
+    "sharepoint",
+    "share point"
+  ],
+  "soc2": [
+    "soc2",
+    "soc 2"
+  ],
+  "spark": [
+    "spark",
+    "pyspark",
+    "apache spark"
+  ],
+  "splunk": [
+    "splunk"
+  ],
+  "spring boot": [
+    "spring boot",
+    "springboot",
+    "spring framework",
+    "spring"
+  ],
+  "spss": [
+    "spss",
+    "statistical package for the social sciences"
+  ],
+  "sql": [
+    "sql",
+    "mysql",
+    "sqlite",
+    "mariadb",
+    "sql server",
+    "mssql",
+    "tsql"
+  ],
+  "stata": [
+    "stata"
+  ],
+  "statistics": [
+    "statistics",
+    "stats",
+    "probability",
+    "hypothesis testing",
+    "regression"
+  ],
+  "supabase": [
+    "supabase"
+  ],
+  "svelte": [
+    "svelte",
+    "sveltekit"
+  ],
+  "swagger": [
+    "swagger",
+    "openapi"
+  ],
+  "swift": [
+    "swift",
+    "swiftui"
+  ],
+  "system design": [
+    "system design",
+    "scalability",
+    "high availability",
+    "distributed systems",
+    "load balancing"
+  ],
+  "tableau": [
+    "tableau",
+    "data visualization"
+  ],
+  "tailwind": [
+    "tailwind",
+    "tailwindcss",
+    "tailwind css"
+  ],
+  "tensorflow": [
+    "tensorflow",
+    "tf",
+    "tensorflow 2",
+    "keras"
+  ],
+  "terraform": [
+    "terraform",
+    "tf"
+  ],
+  "testing": [
+    "testing",
+    "jest",
+    "pytest",
+    "unit testing",
+    "integration testing",
+    "mocha",
+    "cypress",
+    "playwright",
+    "selenium"
+  ],
+  "tomcat": [
+    "tomcat",
+    "apache tomcat"
+  ],
+  "transformers": [
+    "transformers",
+    "huggingface",
+    "hugging face",
+    "bert",
+    "gpt"
+  ],
+  "typescript": [
+    "typescript",
+    "ts",
+    "tsx"
+  ],
+  "ui/ux": [
+    "ui/ux",
+    "ui design",
+    "ux design",
+    "user interface",
+    "user experience"
+  ],
+  "vector databases": [
+    "vector database",
+    "vector databases",
+    "pinecone",
+    "chromadb",
+    "chroma",
+    "weaviate",
+    "milvus",
+    "faiss"
+  ],
+  "vmware": [
+    "vmware",
+    "vsphere",
+    "vcenter",
+    "esxi"
+  ],
+  "vue": [
+    "vue",
+    "vuejs",
+    "vue.js",
+    "vue js",
+    "nuxt",
+    "nuxtjs"
+  ],
+  "waterfall": [
+    "waterfall"
+  ],
+  "webpack": [
+    "webpack",
+    "vite",
+    "rollup",
+    "parcel",
+    "esbuild"
+  ],
+  "websockets": [
+    "websockets",
+    "websocket"
+  ],
+  "windows": [
+    "windows",
+    "windows 10",
+    "windows 11"
+  ],
+  "windows server": [
+    "windows server",
+    "windows server 2016",
+    "windows server 2019",
+    "win server"
+  ],
+  "zendesk": [
+    "zendesk"
+  ]
+}

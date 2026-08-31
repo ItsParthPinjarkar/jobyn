@@ -1,0 +1,81 @@
+{
+  "version": "v1.0",
+  "trained_at": "2026-02-27T15:08:59.552122+00:00",
+  "random_seed": 42,
+  "dataset_size": 1002,
+  "vocabulary_size": 40,
+  "evaluation": {
+    "classifier": {
+      "accuracy": 0.9851,
+      "f1_macro": 0.9842,
+      "confusion_matrix": [
+        [
+          28,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          32,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          36,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          32,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          34,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          36
+        ]
+      ],
+      "class_labels": [
+        "Backend Developer",
+        "Data Scientist",
+        "DevOps Engineer",
+        "Frontend Developer",
+        "Full Stack Developer",
+        "ML Engineer",
+        "Software Developer"
+      ]
+    },
+    "regressor": {
+      "rmse": 0.806,
+      "r2": 0.9949
+    }
+  },
+  "artefacts": {
+    "role_classifier": "role_model_v1.pkl",
+    "score_regressor": "score_model_v1.pkl",
+    "vocabulary": "vocabulary_v1.pkl"
+  }
+}

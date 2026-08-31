@@ -1,0 +1,449 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* ── Tailwind v4 Theme ─────────────────────────────────────── */
+@theme inline {
+  --font-sans: 'Satoshi', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Clash Display', 'Satoshi', system-ui, sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-cyan: #C2593F;          /* Warm copper terracotta */
+  --color-cyan-dim: #A0442E;
+  --color-violet: #0F766E;        /* Sophisticated deep spruce teal/emerald */
+  --color-mint: #10B981;
+  --color-success: #10B981;
+  --color-amber: #F59E0B;
+  --color-warning: #F59E0B;
+  --color-crimson: #EF4444;
+  --color-error: #EF4444;
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* ── Premium Warm Editorial Light Theme Tokens ───────────────── */
+:root {
+  --background: #FAF8F5;          /* Sophisticated warm alabaster parchment */
+  --foreground: #1E1B18;          /* Crisp dark walnut slate */
+  --card: #FFFFFF;                /* Clean porcelain card decks */
+  --card-foreground: #1E1B18;
+  --popover: #FFFFFF;
+  --popover-foreground: #1E1B18;
+  --primary: #A84832;             /* Rich warm copper terracotta — darkened for WCAG AA 4.5:1 */
+  --primary-foreground: #FAF8F5;
+  --secondary: #F3ECE3;           /* Soft warm sandstone */
+  --secondary-foreground: #3C3530;
+  --muted: #F3ECE3;
+  --muted-foreground: #5C5650;    /* Taupe slate — darkened for WCAG AA 4.5:1 */
+  --accent: #0F766E;              /* Elegant deep teal/emerald */
+  --accent-foreground: #FFFFFF;
+  --destructive: #EF4444;
+  --border: #EFEBE4;              /* Delicate warm sandstone divider lines */
+  --input: #EFEBE4;
+  --ring: #C2593F;
+  --surface: #FFFFFF;
+  --surface-elevated: #F3ECE3;
+  --radius: 1rem;                 /* Organic soft curves */
+  --chart-1: #C2593F;
+  --chart-2: #0F766E;
+  --chart-3: #10B981;
+  --chart-4: #F59E0B;
+  --chart-5: #EF4444;
+  --sidebar: #FFFFFF;             /* Sleek light sidebar */
+  --sidebar-foreground: #1E1B18;
+  --sidebar-primary: #C2593F;
+  --sidebar-primary-foreground: #FAF8F5;
+  --sidebar-accent: #F3ECE3;
+  --sidebar-accent-foreground: #C2593F;
+  --sidebar-border: #EFEBE4;
+  --sidebar-ring: #C2593F;
+}
+
+/* ── Base Styles ───────────────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans antialiased;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* ── Reduced Motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Scrollbar Styling ─────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.08);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.16);
+}
+
+/* ── Dark Landing Page Scoped Styles ──────────────────────── */
+.dark-landing {
+  font-family: var(--font-sans);
+}
+
+.dark-landing *::selection {
+  background: rgba(59, 130, 246, 0.25);
+  color: #F8FAFC;
+}
+
+/* Dark landing scrollbar */
+.dark-landing ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+}
+.dark-landing ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Keyframe Animations ──────────────────────────────────── */
+@keyframes dl-drift-1 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(40px, -30px); }
+  66% { transform: translate(-20px, 20px); }
+}
+@keyframes dl-drift-2 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-30px, 40px); }
+  66% { transform: translate(25px, -15px); }
+}
+@keyframes dl-drift-3 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(20px, 25px); }
+  66% { transform: translate(-35px, -20px); }
+}
+
+@keyframes dl-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes dl-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes dl-float-delayed {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes dl-pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes dl-waveform {
+  0%, 100% { height: 4px; }
+  50% { height: var(--wave-h, 20px); }
+}
+
+@keyframes dl-draw-line {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes dl-energy-flow {
+  0% { stroke-dashoffset: 20; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes dl-spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes dl-border-glow {
+  0%, 100% { border-color: rgba(59, 130, 246, 0.15); }
+  50% { border-color: rgba(139, 92, 246, 0.25); }
+}
+
+/* ── Light-optimized Shadow & Utility Classes ──────────────── */
+.glow-cyan {
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.06), 0 10px 40px rgba(79, 70, 229, 0.03);
+}
+.glow-border {
+  box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.15), 0 0 15px rgba(79, 70, 229, 0.06);
+}
+.gradient-accent {
+  background: linear-gradient(135deg, #4F46E5, #7C3AED);
+}
+.gradient-text {
+  background: linear-gradient(135deg, #0F766E, #14B8A6); /* Brand teal gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* ── Dark Landing Theme (scoped) ───────────────────────────── */
+.dark-landing {
+  --dl-bg: #060816;
+  --dl-surface: #0B1020;
+  --dl-surface-elevated: #111827;
+  --dl-text: #F8FAFC;
+  --dl-text-secondary: #94A3B8;
+  --dl-text-muted: #64748B;
+  --dl-accent-blue: #3B82F6;
+  --dl-accent-violet: #8B5CF6;
+  --dl-accent-cyan: #22D3EE;
+  --dl-border: rgba(255, 255, 255, 0.06);
+  --dl-border-hover: rgba(255, 255, 255, 0.12);
+  --dl-glow-blue: rgba(59, 130, 246, 0.15);
+  --dl-glow-violet: rgba(139, 92, 246, 0.12);
+  --dl-glow-cyan: rgba(34, 211, 238, 0.10);
+
+  background: var(--dl-bg);
+  color: var(--dl-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark scrollbar */
+.dark-landing ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.06);
+}
+.dark-landing ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Dark Keyframe Animations ──────────────────────────────── */
+@keyframes dl-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes dl-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.02); }
+  66% { transform: translate(-20px, 15px) scale(0.98); }
+}
+
+@keyframes dl-pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes dl-waveform {
+  0%, 100% { height: 4px; }
+  50% { height: var(--wave-height, 20px); }
+}
+
+@keyframes dl-draw-line {
+  from { stroke-dashoffset: var(--line-length, 1000); }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes dl-energy-flow {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -40; }
+}
+
+@keyframes dl-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes dl-scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes dl-glow-ring {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.3); }
+  50% { box-shadow: 0 0 0 8px rgba(59, 130, 246, 0); }
+}
+
+@keyframes dl-breathe {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes dl-typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes dl-morph-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Dark Landing Utility Classes ──────────────────────────── */
+.dl-shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--dl-text) 0%,
+    var(--dl-accent-cyan) 25%,
+    var(--dl-accent-blue) 50%,
+    var(--dl-accent-violet) 75%,
+    var(--dl-text) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: dl-shimmer 4s linear infinite;
+}
+
+.dl-glow-border {
+  border: 1px solid var(--dl-border);
+  box-shadow: 0 0 20px var(--dl-glow-blue), inset 0 0 20px rgba(59, 130, 246, 0.02);
+}
+
+.dl-glass {
+  background: rgba(11, 16, 32, 0.6);
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  border: 1px solid var(--dl-border);
+}
+
+.dl-card {
+  background: rgba(11, 16, 32, 0.5);
+  border: 1px solid var(--dl-border);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.dl-card:hover {
+  border-color: var(--dl-border-hover);
+  box-shadow: 0 0 30px var(--dl-glow-blue);
+}
+
+/* ── Premium Jobyn Global Utilities ───────────────────── */
+.premium-hover-card {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.premium-hover-card:hover {
+  transform: translateY(-3px) scale(1.005);
+  box-shadow: 0 12px 24px -10px rgba(194, 89, 63, 0.08), 0 4px 12px -5px rgba(15, 118, 110, 0.03);
+  border-color: rgba(194, 89, 63, 0.15) !important;
+}
+
+.premium-hover-pill {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.premium-hover-pill:hover {
+  transform: translateY(-1px) scale(1.02);
+  background-color: rgba(194, 89, 63, 0.08) !important;
+  color: var(--primary) !important;
+}
+
+/* ── Elevated Surface Boxes ───────────────────────────────────
+   A consistent raised "box" that lifts clearly off the warm
+   background on both white and tinted sections. The border gives
+   the edge; the dual terracotta/teal-tinted shadow gives the depth
+   so content stops merging into the page. */
+.surface-card {
+  background: var(--card);
+  border: 1px solid #E7E0D6;
+  border-radius: var(--radius-xl);
+  box-shadow:
+    0 1px 2px rgba(30, 27, 24, 0.04),
+    0 18px 40px -18px rgba(168, 72, 50, 0.16),
+    0 6px 16px -8px rgba(15, 118, 110, 0.06);
+}
+
+/* Subtle tinted surface for nested boxes inside a white card */
+.surface-inset {
+  background: #FBF8F4;
+  border: 1px solid #ECE5DB;
+  border-radius: var(--radius-lg);
+}
+
+/* Depth-only helper: keeps a card's own background, but warms the
+   border and adds the tinted lift so it stops merging into the page.
+   Apply alongside an existing bg-* / border / rounded card. */
+.lift {
+  border-color: #E7E0D6 !important;
+  box-shadow:
+    0 1px 2px rgba(30, 27, 24, 0.04),
+    0 18px 40px -18px rgba(168, 72, 50, 0.16),
+    0 6px 16px -8px rgba(15, 118, 110, 0.06);
+}
+
+/* Hero backdrop: faint warm dot-grid, masked to fade out at the
+   edges so the hero panel visibly sits ON a textured surface
+   instead of floating on flat color. */
+.hero-aura::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at center, rgba(30, 27, 24, 0.05) 1px, transparent 1px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 0%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 0%, transparent 75%);
+}
+

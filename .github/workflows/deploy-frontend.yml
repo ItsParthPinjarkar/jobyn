@@ -1,0 +1,82 @@
+name: Deploy Frontend (Cloudflare)
+
+# Builds the frontend WITH prerendering (scripts/prerender.mjs) on a Linux
+# runner — where headless Chromium is reliable — and deploys the static dist/
+# to Cloudflare. This replaces Cloudflare's own Git build, which runs
+# `tsc && vite build` and SKIPS the postbuild prerender step, so every route
+# shipped a bare SPA shell that Google couldn't index (e.g. /quick-score).
+#
+# This branch (main-backup) configures Cloudflare via frontend/wrangler.jsonc
+# (single-page-application asset handling), so deploy goes through wrangler.
+#
+# ── One-time setup (repo → Settings → Secrets and variables → Actions) ──
+#   Secrets:
+#     CLOUDFLARE_API_TOKEN     Cloudflare token with Pages/Workers edit rights
+#     CLOUDFLARE_ACCOUNT_ID    Cloudflare account id (Workers & Pages → sidebar)
+#     VITE_API_URL             live Render backend URL (baked into the bundle)
+#     VITE_SUPABASE_URL        Supabase project URL
+#     VITE_SUPABASE_ANON_KEY   Supabase anon key
+#
+# ── Also required: turn OFF Cloudflare's own Git auto-build ──
+#   Cloudflare dash → your project → Settings → Builds & deployments → disable
+#   automatic deployments (or disconnect Git). Otherwise Cloudflare rebuilds
+#   WITHOUT prerender on every push and overwrites this deploy.
+
+on:
+  push:
+    branches: [main-backup]
+    paths:
+      - "frontend/**"
+      - ".github/workflows/deploy-frontend.yml"
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    name: Build (prerender) → Cloudflare
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        # No lockfile is committed on this branch (see commit c75d501), so
+        # npm resolves fresh and fetches the correct platform binaries.
+        run: npm install
+
+      - name: Ensure Chromium for Puppeteer prerender
+        run: npx puppeteer browsers install chrome
+
+      - name: Build + prerender public pages
+        # `npm run build` runs prebuild (ONNX copy) → tsc + vite build →
+        # postbuild (prerender.mjs + image optimize). VITE_* must be present
+        # here so the deployed bundle points at the real backend/Supabase.
+        env:
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: npm run build
+
+      - name: Deploy dist/ to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: frontend
+          # The live URL is getjobyn.pages.dev → Pages project "getjobyn".
+          # --branch must match the project's PRODUCTION branch (set in the
+          # Cloudflare dashboard) to publish to the root domain. Verify both
+          # values in the dashboard and adjust if they differ.
+          command: pages deploy dist --project-name=getjobyn --branch=main-backup
+
+      - name: Ping IndexNow (Bing/Yandex/DuckDuckGo)
+        # Instantly notifies IndexNow engines that pages changed. Runs after
+        # deploy so the ownership key file (public/<KEY>.txt) is already live.
+        # Never fails the build — the script always exits 0.
+        run: node scripts/submit-indexnow.mjs

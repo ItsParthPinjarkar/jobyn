@@ -1,0 +1,87 @@
+# gitignore clean version
+__pycache__/
+*.py[cod]
+.env
+.venv
+venv/
+env/
+node_modules/
+dist/
+# Lockfile is intentionally NOT committed: it was generated on Windows and omits
+# the Linux rollup native binary (@rollup/rollup-linux-x64-gnu), which breaks
+# `npm ci` on Linux builders (npm/cli#4828). All envs (CI, Render, Cloudflare)
+# install via `npm install` so the correct per-platform binary is resolved.
+frontend/package-lock.json
+.DS_Store
+*.pdf
+*.docx
+!backend/supabase_schema.sql
+# ML models — trained on deploy via render.yaml (too large for GitHub 100MB limit)
+backend/models/*.pkl
+backend/models/*.onnx
+frontend/public/models/role_model_v2.onnx
+frontend/public/models/score_model_v2.onnx
+
+# SQLite databases
+backend/app/db/*.db
+
+# Analysis reports (internal reference only — not for GitHub)
+analysis/
+
+# Training data (305 MB)
+backend/data/
+backend/uploads/
+.vscode/
+.idea/
+frontend/public/ort/*.wasm
+.pytest_cache/
+
+# Seed content (generated JSON — not tracked in git)
+content/seed/
+
+# Temp batch files from generation scripts
+_overview_batch_*.json
+_quiz_batch_*.json
+_qb_*.json
+_gen_*.py
+_b2_*.json
+_quiz_data_*.json
+_quiz_skill_*.json
+_tmp_*
+_tmp_skills/
+gen_batch*.py
+
+# Skills / agent configs
+.claude/
+.agents/
+
+# Artifacts / evaluation output
+artifacts/
+
+# Council audit reports (internal reference only)
+council-report-*.html
+council-transcript-*.md
+COUNCIL-PLAN.md
+blog-*.md
+
+# Graphify knowledge graph output
+graphify-out/
+
+# OpenClaude local config
+.openclaude/
+
+# Internal analysis/intelligence files
+PROJECT_INTELLIGENCE_FILE.md
+
+# Job application POCs
+bolna-poc/
+
+# Promo video project (Remotion) — local only, not shipped
+promo/
+
+# Local venv on Windows
+/Scripts/
+Include/
+pyvenv.cfg
+lib64
+share/

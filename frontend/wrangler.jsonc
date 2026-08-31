@@ -1,0 +1,11 @@
+{
+  // Cloudflare Workers static-assets config for the Jobyn frontend (Vite SPA).
+  // Root directory in the Cloudflare build is `frontend`, so `./dist` is relative to it.
+  "name": "jobyn",
+  "compatibility_date": "2026-06-27",
+  "assets": {
+    "directory": "./dist",
+    // Serve index.html for unknown routes so client-side React Router works.
+    "not_found_handling": "single-page-application"
+  }
+}

@@ -1,0 +1,24 @@
+# Jobyn
+
+> Jobyn is a free AI career-readiness platform for engineering students. Upload your resume to get an ML-powered readiness score for a target role, dependency-aware skill-gap analysis and study plans, a RAG-backed AI study tutor, voice-based mock interviews, and GitHub project verification — most of it usable without signup.
+
+Key facts:
+- **Free** for engineering students. No credit card, no paid tiers.
+- **ML scoring**: RandomForest models trained on 57,100 real resumes; ~95% role-classification accuracy (F1 macro 0.857), score regressor R²=0.992.
+- **7 supported roles**: Software Developer, Frontend Developer, Backend Developer, Full Stack Developer, Data Scientist, ML Engineer, DevOps Engineer.
+- **Privacy mode**: resume scoring can run entirely on-device in the browser via ONNX Runtime Web (WebAssembly) — the resume never leaves the user's device.
+- **3-layer analysis**: deterministic weighted scoring + ML inference + generative AI (Google Gemini) for study materials, interview simulation, and feedback.
+- Built with React, FastAPI, Supabase (PostgreSQL + PGVector), Google Gemini, and the Web Speech API. Open source.
+
+## Core pages
+- [Home](https://getjobyn.pages.dev/): What Jobyn is and how the readiness engine works.
+- [Quick Score](https://getjobyn.pages.dev/quick-score): Free, instant resume readiness score — no signup required.
+- [Documentation](https://getjobyn.pages.dev/docs): How Jobyn works — ONNX on-device ML, privacy-first analysis, skill-gap detection, scoring methodology.
+- [Blog](https://getjobyn.pages.dev/blog): Articles on resume analysis, skill gaps, and AI interview practice.
+
+## Policies
+- [Privacy](https://getjobyn.pages.dev/privacy): Zero-cloud-retention architecture; on-device processing; GDPR/CCPA/FERPA alignment.
+- [Terms](https://getjobyn.pages.dev/terms): Terms of service.
+
+## Repository
+- [GitHub](https://github.com/Ganesh-0509/Jobyn): Open-source source code.

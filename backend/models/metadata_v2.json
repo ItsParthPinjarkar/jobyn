@@ -1,0 +1,91 @@
+{
+  "version": "2.0",
+  "trained_on_records": 57100,
+  "real_records": 57100,
+  "synthetic_records": 0,
+  "accuracy": 0.9498,
+  "f1_macro": 0.8566,
+  "rmse": 2.5658,
+  "r2": 0.9918,
+  "hyperparameters": {
+    "n_estimators": 300,
+    "max_depth": 20,
+    "min_samples_leaf": 3
+  },
+  "date_trained": "2026-05-29T02:52:16.206035+00:00",
+  "random_seed": 42,
+  "vocabulary_size": 147,
+  "evaluation": {
+    "classifier": {
+      "accuracy": 0.9498,
+      "f1_macro": 0.8566,
+      "confusion_matrix": [
+        [
+          2722,
+          0,
+          69,
+          32,
+          31,
+          19
+        ],
+        [
+          0,
+          46,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          28,
+          0,
+          3269,
+          34,
+          47,
+          37
+        ],
+        [
+          3,
+          0,
+          1,
+          32,
+          2,
+          1
+        ],
+        [
+          18,
+          0,
+          97,
+          53,
+          2538,
+          14
+        ],
+        [
+          14,
+          0,
+          35,
+          13,
+          25,
+          2240
+        ]
+      ],
+      "class_labels": [
+        "Backend Developer",
+        "Data Scientist",
+        "DevOps Engineer",
+        "Frontend Developer",
+        "Full Stack Developer",
+        "Software Developer"
+      ]
+    },
+    "regressor": {
+      "rmse": 2.5658,
+      "r2": 0.9918
+    }
+  },
+  "artefacts": {
+    "role_classifier": "role_model_v2.pkl",
+    "score_regressor": "score_model_v2.pkl",
+    "vocabulary": "vocabulary_v2.pkl"
+  }
+}

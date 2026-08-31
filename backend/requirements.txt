@@ -1,0 +1,44 @@
+# Jobyn — Backend Dependencies
+#
+# Pinning policy (set 2026-06-10):
+#   == pins are exact versions verified working (app import + test suite +
+#      full ML inference pipeline ran green against them).
+#   >=,<  ranges cap the major version for packages not present in the
+#      verification environment — prevents a fresh build silently pulling a
+#      breaking new major (the numpy 1.x->2.x jump that broke ONNX inference).
+#   Validate any change with a CI run (Python 3.12) before deploy.
+
+fastapi==0.120.0
+uvicorn==0.38.0
+pydantic==2.12.3
+python-multipart==0.0.22
+python-dotenv==1.1.1
+PyJWT==2.11.0
+supabase==2.28.0
+httpx==0.28.1
+slowapi==0.1.9
+sentry-sdk[fastapi]==2.60.0
+# ML / Data
+numpy==2.4.1
+scikit-learn==1.8.0
+onnxruntime==1.26.0
+skl2onnx==1.20.0
+# Document parsing
+pdfplumber==0.11.9
+python-docx==1.2.0
+# Encryption
+cryptography==46.0.5
+# Google Generative AI (new SDK — uses `from google import genai`)
+google-genai==2.7.0
+# MIME type detection
+python-magic>=0.4.27,<0.5      # not in verification env — major capped
+# LangChain (text splitting)
+langchain-text-splitters>=0.2,<1.0   # not in verification env — major capped
+# Testing
+pytest==9.0.2
+pytest-asyncio>=0.23,<2.0      # not in verification env — major capped
+# Optional services
+redis>=5.0,<7.0                # not in verification env — major capped
+wikipedia>=1.4,<2.0            # not in verification env — major capped
+duckduckgo-search==8.1.1
+bytez==3.0.1

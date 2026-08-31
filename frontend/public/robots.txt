@@ -1,0 +1,28 @@
+# Jobyn — robots.txt
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /login
+Disallow: /signup
+
+# AI search & answer engines — explicitly welcomed (we want to be cited).
+# Private app paths stay blocked; everything public is open for crawling.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: Claude-Web
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /login
+Disallow: /signup
+
+Sitemap: https://getjobyn.pages.dev/sitemap.xml
